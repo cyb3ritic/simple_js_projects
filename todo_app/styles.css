@@ -71,8 +71,12 @@
     transition: background-color 0.3s;
 }
 
-button:hover {
+.row button:hover {
     background-color: #068051;
+}
+
+.row button:focus {
+    outline: 2px solid #068051;
 }
 
 ul {
@@ -87,7 +91,10 @@ ul li {
     user-select: none;
     cursor: pointer;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: color 0.3s, text-decoration 0.3s;
 }
+
 
 ul li::before {
     content: '';
@@ -101,6 +108,7 @@ ul li::before {
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
+    background-color: #ddd; /* Fallback if image is unavailable */
 }
 
 ul li.checked {
@@ -110,6 +118,24 @@ ul li.checked {
 
 ul li.checked::before {
     background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    font-size: 22px;
+    line-height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul li span:hover {
+    background-color: #f3f3f3;
 }
 
 @media (max-width: 768px) {
